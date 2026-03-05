@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>2273032-Adityappr</title>
+  <style>
+    body{
+      margin:0;
+      background:#fff;
+      font-family:"Times New Roman", Times, serif;
+      font-size:16px;
+      line-height:1.25;
+      color:#000;
+    }
+
+    /* bingkai halaman seperti contoh */
+    .page{
+      width: 820px;
+      margin: 18px auto;
+      border: 2px solid #000;
+      padding: 10px 12px 14px 12px;
+      box-sizing: border-box;
+    }
+
+    /* bar merah bagian atas */
+    .topbar{
+      background:#e00000;
+      height:22px;
+      display:flex;
+      align-items:center;
+      padding-left:8px;
+      box-sizing:border-box;
+      margin-bottom:6px;
+    }
+    .topbar span{
+      font-weight:bold;
+      color:#000;
+      letter-spacing:0.3px;
+    }
+
+    a{ color:#00f; text-decoration:underline; }
+
+    /* highlight kuning teks merah seperti contoh */
+    .hl{
+      background:#ff0;
+      color:#c00;
+      font-style:italic;
+      padding:0 2px;
+    }
+
+    /* judul section bar hitam */
+    .section-title{
+      margin:14px 0 0 0;
+      background:#000;
+      color:#fff;
+      font-weight:bold;
+      padding:3px 6px;
+      font-size:18px;
+    }
+
+    /* kotak daftar isi */
+    .toc-wrap{
+      margin: 14px 0 10px 0;
+      display:inline-block;
+      border:1px solid #000;
+    }
+    .toc-wrap .toc-head{
+      background:#eee;
+      border-bottom:1px solid #000;
+      text-align:center;
+      font-weight:bold;
+      padding:3px 10px;
+    }
+    .toc{
+      padding:6px 12px 10px 14px;
+    }
+    .toc ol{
+      margin:0;
+      padding-left:16px;
+    }
+    .toc > ol{ padding-left:18px; }
+    .toc li{ margin:2px 0; }
+    .toc ul{
+      margin: 2px 0 4px 0;
+      padding-left:22px;
+      list-style-type:circle; /* bulat kosong */
+    }
+
+    /* list bullet di isi artikel */
+    ul{ margin: 6px 0 8px 20px; }
+
+    /* kotak code contoh dokumen */
+    .codebox{
+      border:1px solid #000;
+      padding:8px 10px;
+      width: 520px;
+      background:#f7f7f7;
+      margin-top:6px;
+      font-family: "Courier New", Courier, monospace;
+      font-size:14px;
+      line-height:1.25;
+      white-space:pre;
+    }
+
+    .footer{
+      text-align:center;
+      margin-top:14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="topbar"><span>HTML</span></div>
+
+    <div>Dari Wikipedia bahasa Indonesia, ensiklopedia bebas</div>
+    <div>(Dialihkan dari <a href="https://id.wikipedia.org/wiki/HTML" target="_blank">HyperText markup language</a>)</div>
+
+    <p style="margin:6px 0 0 0;">
+      <b>HyperText Markup Language</b> (HTML) adalah sebuah <span class="hl">bahasa markah</span> yang digunakan untuk membuat
+      sebuah halaman web, menampilkan berbagai informasi di dalam sebuah <span class="hl">penjelajah web</span> Internet dan
+      pemformatan hiperteks sederhana yang ditulis dalam berkas format ASCII agar dapat menghasilkan tampilan wujud yang terintegerasi.
+      Dengan kata lain, berkas yang dibuat dalam perangkat lunak pengolah kata dan disimpan dalam format <span class="hl">ASCII</span> normal
+      sehingga menjadi <span class="hl">halaman web</span> dengan perintah-perintah HTML.
+      Bermula dari sebuah bahasa yang sebelumnya banyak digunakan di dunia penerbitan dan percetakan yang disebut dengan
+      <span class="hl">SGML</span> (<i>Standard Generalized Markup Language</i>), HTML adalah sebuah standar yang digunakan secara luas
+      untuk menampilkan halaman web. HTML saat ini merupakan standar <span class="hl">Internet</span> yang didefinisikan dan
+      dikendalikan penggunaannya oleh <a href="https://www.w3.org/" target="_blank"><span class="hl">World Wide Web Consortium</span></a> (W3C).
+      HTML dibuat oleh kolaborasi Caillau TIM dengan Berners-lee Robert ketika mereka bekerja di CERN pada tahun 1989
+      (CERN adalah lembaga penelitian fisika energi tinggi di Jenewa).
+    </p>
+
+    <div class="toc-wrap">
+      <div class="toc-head">Daftar isi</div>
+      <div class="toc">
+        <ol>
+          <li><a href="#sejarah">Sejarah</a>
+            <ul>
+              <li><a href="#perkembangan">Perkembangan</a></li>
+              <li><a href="#standar">Sejarah dari standar HTML</a></li>
+            </ul>
+          </li>
+          <li><a href="#kegunaan">Kegunaan</a>
+            <ul>
+              <li><a href="#menyunting">Menyunting format tulisan</a></li>
+            </ul>
+          </li>
+          <li><a href="#markah">Markah/Tanda</a>
+            <ul>
+              <li><a href="#contoh">Contoh dokumen HTML sederhana</a></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="section-title" id="sejarah">Sejarah</div>
+
+    <div style="font-weight:bold;">Perkembangan</div>
+    <p id="perkembangan" style="margin:0;">
+      Tahun 1980, IBM memikirkan pembuatan suatu dokumen yang akan mengenali setiap elemen dari dokumen dengan suatu tanda tertentu.
+      IBM kemudian mengembangkan suatu jenis bahasa yang menggabungkan teks dengan perintah-perintah pemformatan dokumen.
+      Bahasa ini dinamakan Markup Language, sebuah bahasa yang menggunakan tanda-tanda sebagai basisnya. IBM menamakan sistemnya ini
+      sebagai Generalized Markup Language atau GML.
+    </p>
+    <p style="margin:8px 0 0 0;">
+      Tahun 1986, ISO menyatakan bahwa IBM memiliki suatu konsep tentang dokumen yang sangat baik, dan kemudian mengeluarkan suatu publikasi
+      (ISO 8879) yang menyatakan markup language sebagai standar untuk pembuatan dokumen-dokumen. ISO membuat bahasa ini dari GML milik IBM,
+      tetapi memberinya nama lain, yaitu <a href="https://id.wikipedia.org/wiki/SGML" target="_blank">SGML</a> (Standard Generalized Markup Language).
+      ISO dalam publikasinya meyakini bahwa SGML akan sangat berguna untuk pemrosesan informasi teks dan sistem-sistem perkantoran.
+      Tetapi diluar perkiraan ISO, SGML dan terutama subset dari SGML, yaitu HTML juga berguna untuk menjelajahi internet. Khususnya bagi mereka
+      yang menggunakan World Wide Web. Versi terakhir dari HTML saat ini adalah HTML5.
+    </p>
+
+    <div style="font-weight:bold; margin-top:6px;" id="standar">Sejarah dari standar HTML</div>
+    <ul style="margin-top:4px;">
+      <li><a href="https://www.rfc-editor.org/rfc/rfc1866" target="_blank">HTML 2.0</a> — (RFC 1866) disetujui sebagai standar <a href="https://id.wikipedia.org/wiki/22_September" target="_blank">22 September 1995</a>,</li>
+      <li><a href="https://www.w3.org/MarkUp/Wilbur/" target="_blank">HTML 3.2</a> — <a href="https://id.wikipedia.org/wiki/14_Januari" target="_blank">14 Januari 1996</a>,</li>
+      <li><a href="https://www.w3.org/TR/REC-html40-971218/" target="_blank">HTML 4.0</a> — <a href="https://id.wikipedia.org/wiki/18_Desember" target="_blank">18 Desember 1997</a>,</li>
+      <li><a href="https://www.w3.org/TR/html401/" target="_blank">HTML 4.01</a> (minor fixes) — <a href="https://id.wikipedia.org/wiki/24_Desember" target="_blank">24 Desember 1999</a>,</li>
+      <li><a href="https://www.iso.org/standard/27688.html" target="_blank">ISO/IEC 15445:2000</a> ("ISO HTML", berdasar pada HTML 4.01 Strict) — <a href="https://id.wikipedia.org/wiki/15_Mei" target="_blank">15 Mei 2000</a>.</li>
+      <li><a href="https://www.w3.org/TR/html5/" target="_blank">HTML 5</a> masih dalam draft pengerjaan — <a href="https://id.wikipedia.org/wiki/Januari_2008" target="_blank">Januari 2008</a>.</li>
+    </ul>
+
+    <div class="section-title" id="kegunaan">Kegunaan</div>
+    <ul>
+      <li>Mengintegerasikan gambar dengan tulisan.</li>
+      <li>Membuat <a href="https://id.wikipedia.org/wiki/Pranala" target="_blank">Pranala</a>.</li>
+      <li>Mengintegerasikan berkas suara dan rekaman gambar hidup.</li>
+      <li>Membuat form interaktif.<a href="#ref2">[2]</a></li>
+    </ul>
+
+    <p style="margin-top:10px;">
+      HTML dokumen tersebut mirip dengan dokumen tulisan biasa, hanya dalam dokumen ini sebuah tulisan bisa memuat instruksi yang ditandai
+      dengan kode atau lebih dikenal dengan TAG tertentu. Sebagai contoh jika ingin membuat tulisan ditampilkan menjadi tebal seperti:
+      <b>TAMPIL TEBAL</b>, maka penulisannya dilakukan dengan cara:
+      <code>&lt;b&gt;TAMPIL TEBAL&lt;/b&gt;</code>.
+      Tanda <code>&lt;b&gt;</code> digunakan untuk mengaktifkan instruksi cetak tebal, diikuti oleh tulisan yang ingin ditebalkan,
+      dan diakhiri dengan tanda <code>&lt;/b&gt;</code> untuk menonaktifkan cetak tebal tersebut.
+      HTML lebih menekankan pada penggambaran komponen-komponen struktur dan format di dalam halaman web daripada menentukan penampilannya.
+      Sedangkan penjelajah web digunakan untuk menginterpretasikan susunan halaman ke gaya built-in penjelajah web dengan menggunakan jenis tulisan,
+      tab, warna, garis, dan perataan text yang dikehendaki ke komputer yang menampilkan halaman web.
+      Salah satu hal Penting tentang eksistensi HTML adalah tersedianya <i>Lingua franca</i> (bahasa Komunikasi) antar komputer dengan kemampuan berbeda.
+      Pengguna <a href="https://id.wikipedia.org/wiki/Macintosh" target="_blank">Macintosh</a> tidak dapat melihat tampilan yang sama sebagaimana tampilan yang terlihat
+      dalam pc berbasis Windows. Pengguna <a href="https://id.wikipedia.org/wiki/Microsoft_Windows" target="_blank">Microsoft Windows</a> pun tidak akan dapat melihat tampilan
+      yang sama sebagaimana tampilan yang terlihat pada pengguna yang menggunakan <a href="https://id.wikipedia.org/wiki/Sun_Microsystems" target="_blank">Produk-produk Sun Microsystems</a>.
+      namun demikian pengguna-pengguna tersebut dapat melihat semua halaman web yang telah diformat dan berisi <a href="https://id.wikipedia.org/wiki/Grafika" target="_blank">Grafika</a>
+      dan <a href="https://id.wikipedia.org/wiki/Pranala" target="_blank">Pranala</a>.<a href="#ref3">[3]</a>
+    </p>
+
+    <div style="font-weight:bold;" id="menyunting">Menyunting format tulisan</div>
+    <p style="margin:0;">
+      HTML memungkinkan seseorang untuk menyunting tampilan atau format berkas yang akan dikirimkan melalui media daring.
+      Beberapa hal yang dapat dilakukan dalam menentukan format berkas adalah:
+    </p>
+    <ul>
+      <li>Menampilkan suatu kelompok kata dalam beberapa ukuran yang dapat digunakan untuk judul, heading dan sebagainya.</li>
+      <li>Menampilkan tulisan dalam bentuk cetakan tebal</li>
+      <li>Menampilkan sekelompok kata dalam bentuk miring</li>
+      <li>Menampilkan naskah dalam bentuk huruf yang mirip dengan hasil ketikan mesin ketik</li>
+      <li>Mengubah-ubah ukuran tulisan untuk suatu karakter tertentu.</li>
+    </ul>
+
+    <div class="section-title" id="markah">Markah/Tanda</div>
+    <p style="margin-top:6px;">
+      Secara garis besar, terdapat 4 jenis elemen dari HTML:
+    </p>
+    <ul>
+      <li><i>Struktural.</i> Tanda yang menentukan level atau tingkatan dari sebuah tulisan (contoh, <code>&lt;h1&gt;Golf&lt;/h1&gt;</code>
+        akan memerintahkan peramban untuk menampilkan "Golf" sebagai tulisan tebal besar yang menunjukkan sebagai Heading 1</li>
+      <li><i>Presentasional.</i> Tanda yang menentukan tampilan dari sebuah tulisan tidak peduli dengan level dari tulisan tersebut
+        (contoh, <code>&lt;b&gt;boldface&lt;/b&gt;</code> akan menampilkan <b>bold</b>. Tanda presentasional saat ini sudah mulai digantikan oleh
+        <a href="https://id.wikipedia.org/wiki/CSS" target="_blank">CSS</a> dan tidak direkomendasikan untuk mengatur tampilan tulisan,</li>
+      <li><a href="https://id.wikipedia.org/wiki/Hiperteks" target="_blank"><i>Hiperteks.</i></a> Tanda yang menunjukkan pranala ke bagian dari dokumen tersebut atau pranala ke dokumen lain
+        (contoh, <code>&lt;a href="http://www.wikipedia.org/"&gt;Wikipedia&lt;/a&gt;</code> akan menampilkan
+        <a href="http://www.wikipedia.org/" target="_blank">Wikipedia</a> sebagai sebuah <a href="https://id.wikipedia.org/wiki/URL" target="_blank">hyperlink</a> ke URL tertentu),</li>
+      <li>Elemen <i>widget</i> yang membuat objek-objek lain seperti tombol (<code>&lt;button&gt;</code>), list (<code>&lt;li&gt;</code>), dan garis horizontal (<code>&lt;hr&gt;</code>).
+        Konsep hypertext pada HTML memungkinkan pembuatan link pada suatu kelompok kata atau frasa untuk menuju ke bagian manapun dalam World Wide Web,</li>
+    </ul>
+
+    <p style="margin:10px 0 0 0;">
+      Ada tiga macam pranala (<i>link</i>) yang dapat digunakan :
+    </p>
+    <ul>
+      <li>Pranala menuju bagian lain dari page.</li>
+      <li>Pranala menuju page lain dalam satu web site.</li>
+      <li>Pranala menuju resource atau web site yang berbeda.<a href="#ref4">[4]</a></li>
+    </ul>
+
+    <p style="margin-top:10px;">
+      Selain markup <i>presentasional</i> , markup yang lain tidak menentukan bagaimana tampilan dari sebuah tulisan.
+      Namun untuk saat ini, penggunaan tag HTML untuk menentukan tampilan telah dianjurkan untuk mulai ditinggalkan,
+      dan sebagai gantinya digunakan <a href="https://id.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">Cascading Style Sheets</a>.
+    </p>
+
+    <div style="font-weight:bold;" id="contoh">Contoh dokumen HTML sederhana</div>
+    <div class="codebox">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head bgcolor="black" text="white"&gt;
+    &lt;title&gt;::Selamat Datang HTML::&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;2273032 - [adityappr]!&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</div>
+
+    <!-- “referensi” dummy supaya [2][3][4] bisa di-klik seperti contoh -->
+    <div id="ref2"></div>
+    <div id="ref3"></div>
+    <div id="ref4"></div>
+
+    <div class="footer">NRP - Nama ©</div>
+  </div>
+</body>
+</html>
