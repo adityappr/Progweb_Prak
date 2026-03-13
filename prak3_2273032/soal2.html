@@ -3,49 +3,55 @@
 <head>
     <title>2273032-aditya</title>
 </head>
-<body>
+<body bgcolor="#eeeeee">
+
     <form>
+        <form action="upload.html" method="get">
         <table border="1" cellspacing="0" cellpadding="10" align="center" width="700">
             <tr>
-                <th colspan="3" style="font-size:40px;">Edit profile</th>
+                <th colspan="2" style="font-size: 40px;">Edit profile</th>
             </tr>
+
             <tr>
-                <td width="180" align="center">
-                    <img src="https://via.placeholder.com/120x140" alt="Profile Photo"><br><br>
+                <td width="180" align="center" valign="top">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Tim_Berners-Lee.jpg/220px-Tim_Berners-Lee.jpg" alt="Profile Photo" width="120" height="140"><br><br>
+                    <input type="file"><br><br>
                     <input type="button" value="Upload">
                 </td>
 
-                <td width="320">
-                    <table cellpadding="8">
+                <td width="520" valign="top">
+                    <table cellpadding="8" cellspacing="0">
                         <tr>
-                            <td>Name</td>
+                            <td width="150">Name</td>
                             <td><input type="text" value="Tim Berners-Lee"></td>
                         </tr>
+
                         <tr>
                             <td>Position</td>
                             <td>
                                 <select>
                                     <optgroup label="Programmer">
-                                        <option>Programmer</option>
                                         <option selected>Senior Programmer</option>
                                         <option>Junior Programmer</option>
                                     </optgroup>
                                     <optgroup label="System Analyst">
-                                        <option>System Analyst</option>
                                         <option>Senior Analyst</option>
                                         <option>Junior Analyst</option>
                                     </optgroup>
                                 </select>
                             </td>
                         </tr>
+
                         <tr>
                             <td>Password</td>
                             <td><input type="password" value="admin"></td>
                         </tr>
+
                         <tr>
                             <td>Confirm Password</td>
                             <td><input type="password" value="admin"></td>
                         </tr>
+
                         <tr>
                             <td colspan="2" align="right">
                                 <input type="reset" value="Reset">
@@ -54,23 +60,9 @@
                         </tr>
                     </table>
                 </td>
-
-                <td width="200" valign="top">
-                    <select size="6" style="width:180px;">
-                        <optgroup label="Programmer">
-                            <option>Programmer</option>
-                            <option selected>Senior Programmer</option>
-                            <option>Junior Programmer</option>
-                        </optgroup>
-                        <optgroup label="System Analyst">
-                            <option>System Analyst</option>
-                            <option>Senior Analyst</option>
-                            <option>Junior Analyst</option>
-                        </optgroup>
-                    </select>
-                </td>
             </tr>
         </table>
     </form>
+
 </body>
 </html>
