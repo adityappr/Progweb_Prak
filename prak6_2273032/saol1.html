@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>2273032-aditya</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+
+    .box {
+      width: 300px;
+      border: 1px solid #ccc;
+      padding: 12px;
+      margin: 20px;
+      background: #f7f7f7;
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    }
+
+    .row {
+      margin-bottom: 8px;
+    }
+
+    label {
+      display: inline-block;
+      width: 120px;
+    }
+
+    .colon {
+      display: inline-block;
+      width: 10px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 120px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+      text-align: center;
+      font-size: 26px;
+      background: white;
+    }
+
+    td {
+      border: 1px solid #666;
+      width: 20%;
+      height: 48px;
+    }
+
+    button {
+      padding: 4px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <div class="row">
+      <label>Angka Pertama</label>
+      <span class="colon">:</span>
+      <input type="text" id="angka1" />
+    </div>
+
+    <div class="row">
+      <label>Angka Kedua</label>
+      <span class="colon">:</span>
+      <input type="text" id="angka2" />
+    </div>
+
+    <div class="row">
+      <button onclick="hitung()">Count</button>
+    </div>
+
+    <table>
+      <tr>
+        <td id="a1_plus"></td>
+        <td>+</td>
+        <td id="a2_plus"></td>
+        <td>=</td>
+        <td id="hasil_plus"></td>
+      </tr>
+      <tr>
+        <td id="a1_minus"></td>
+        <td>-</td>
+        <td id="a2_minus"></td>
+        <td>=</td>
+        <td id="hasil_minus"></td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    function hitung() {
+      var x = document.getElementById("angka1").value.trim();
+      var y = document.getElementById("angka2").value.trim();
+
+      var a = parseInt(x);
+      var b = parseInt(y);
+
+      var aBukanAngka = (x === "" || isNaN(a));
+      var bBukanAngka = (y === "" || isNaN(b));
+
+      if (aBukanAngka && bBukanAngka) {
+        alert("angka pertama dan kedua harus angka.");
+        return;
+      } else if (aBukanAngka) {
+        alert("angka pertama bukan angka.");
+        return;
+      } else if (bBukanAngka) {
+        alert("angka kedua harus angka.");
+        return;
+      }
+
+      document.getElementById("a1_plus").innerHTML = a;
+      document.getElementById("a2_plus").innerHTML = b;
+      document.getElementById("hasil_plus").innerHTML = a + b;
+
+      document.getElementById("a1_minus").innerHTML = a;
+      document.getElementById("a2_minus").innerHTML = b;
+      document.getElementById("hasil_minus").innerHTML = a - b;
+    }
+  </script>
+
+</body>
+</html>

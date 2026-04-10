@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>2273032-aditya</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .control {
+      margin: 20px auto;
+      width: 300px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #f7f7f7;
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    }
+    #canvasPyramid {
+      width: 800px;
+      height: 600px;
+      border: 1px solid #999;
+      margin: 10px auto;
+      background: #f2f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: auto;
+    }
+    table { border-collapse: collapse; }
+    td {
+      width: 34px;
+      height: 34px;
+      border: 1px solid #f5d27a;
+      background: orange;
+    }
+    td.empty {
+      background: transparent;
+      border: none;
+      width: 34px;
+      height: 34px;
+    }
+  </style>
+</head>
+<body>
+  <div class="control">
+    <label>Tinggi Piramida:</label>
+    <input type="text" id="tinggi" />
+    <button onclick="proses()">proses</button>
+  </div>
+
+  <div id="canvasPyramid">
+    <div id="hasilPyramid"></div>
+  </div>
+
+  <script>
+    function proses() {
+      var val = document.getElementById("tinggi").value.trim();
+      var h = parseInt(val);
+
+      if (val === "" || isNaN(h) || h <= 0) {
+        alert("Tinggi piramida harus angka lebih dari 0.");
+        return;
+      }
+
+      var html = "<table>";
+      for (var i = 1; i <= h; i++) {
+        html += "<tr>";
+        
+        for (var j = 1; j <= (2 * h - 1); j++) {
+          
+          var kiri = h - i + 1;
+          var kanan = h + i - 1;
+          if (j >= kiri && j <= kanan) {
+            html += "<td></td>";
+          } else {
+            html += "<td class='empty'></td>";
+          }
+        }
+        html += "</tr>";
+      }
+      html += "</table>";
+
+      document.getElementById("hasilPyramid").innerHTML = html;
+    }
+  </script>
+</body>
+</html>
