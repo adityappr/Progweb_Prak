@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>2273032-aditya</title>
+  <style>
+    body {
+      font-family: "Courier New", monospace;
+      padding: 30px;
+    }
+
+    .container {
+      width: 360px;
+      border: 1px solid #888;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .label {
+      width: 95px;
+      font-size: 28px;
+    }
+
+    .textbox {
+      width: 200px;
+      height: 30px;
+      font-size: 16px;
+    }
+
+    .btn {
+      width: 60px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .combo {
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="label">Data</div>
+    <input type="text" id="txtData" class="textbox" >
+  </div>
+
+  <div class="row">
+    <button class="btn" onclick="tambahData()">Add</button>
+
+    <select id="cmbOperasi" class="combo" onchange="prosesOperasi()">
+      <option value="">Pilih Operasi</option>
+      <option value="display">Display</option>
+      <option value="count">Count</option>
+      <option value="sum">Sum</option>
+      <option value="average">Average</option>
+      <option value="max">Max</option>
+      <option value="min">Min</option>
+      <option value="ganjil">Ganjil</option>
+      <option value="genap">Genap</option>
+      <option value="hapus">Hapus</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <div class="label">Hasil</div>
+    <input type="text" id="txtHasil" class="textbox" readonly>
+  </div>
+</div>
+
+<script>
+  var dataArray = [];
+
+  function tambahData() {
+    var input = document.getElementById("txtData").value;
+
+    if (input.trim() == "") {
+      alert("Isi data dulu");
+      return;
+    }
+
+    
+    var arr = input.split(",");
+
+    for (var i = 0; i < arr.length; i++) {
+      var angka = arr[i].trim();
+
+      if (!isNaN(angka) && angka !== "") {
+        dataArray.push(parseFloat(angka));
+      }
+    }
+
+    
+    document.getElementById("txtData").value = "";
+  }
+
+  function prosesOperasi() {
+    var op = document.getElementById("cmbOperasi").value;
+    var hasil = document.getElementById("txtHasil");
+
+    if (op == "display") {
+      hasil.value = dataArray.join(", ");
+    }
+    else if (op == "count") {
+      hasil.value = dataArray.length;
+    }
+    else if (op == "sum") {
+      var total = 0;
+      for (var i = 0; i < dataArray.length; i++) {
+        total += dataArray[i];
+      }
+      hasil.value = total;
+    }
+    else if (op == "average") {
+      var total = 0;
+      for (var i = 0; i < dataArray.length; i++) {
+        total += dataArray[i];
+      }
+      hasil.value = dataArray.length ? total / dataArray.length : "";
+    }
+    else if (op == "max") {
+      hasil.value = dataArray.length ? Math.max(...dataArray) : "";
+    }
+    else if (op == "min") {
+      hasil.value = dataArray.length ? Math.min(...dataArray) : "";
+    }
+    else if (op == "ganjil") {
+      hasil.value = dataArray.filter(x => x % 2 != 0).join(", ");
+    }
+    else if (op == "genap") {
+      hasil.value = dataArray.filter(x => x % 2 == 0).join(", ");
+    }
+    else if (op == "hapus") {
+      dataArray = [];
+      hasil.value = "";
+    }
+  }
+</script>
+
+</body>
+</html>
