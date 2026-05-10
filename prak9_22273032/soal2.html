@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2273032-aditya</title>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+    body {
+
+    
+        font-family: "Times New Roman";
+        font-size: 16px;
+    }
+
+    .box {
+        width: 280px;
+        padding: 8px;
+        margin: 30px auto;
+        box-shadow: 0 0 10px gray;
+    }
+
+    
+    .control {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 5px;
+    }
+
+    input {
+        flex: 1;
+    }
+
+    #daftar div {
+        margin-top: 2px;
+    }
+</style>
+
+<script>
+$(document).ready(function(){
+
+    
+    $("#add").click(function(){
+        var nama = $("#nama").val();
+
+        if(nama != ""){
+            $("<div>" + nama + "</div>").appendTo("#daftar");
+            $("#nama").val("");
+        }
+    });
+
+    
+    $("#search").click(function(){
+        var cari = $("#nama").val();
+
+        $("#daftar div").css("text-decoration", "none");
+
+        if(cari != ""){
+            $("#daftar div:contains('" + cari + "')")
+            .css("text-decoration", "underline");
+        }
+    });
+
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <div class="control">
+        <input type="text" id="nama">
+        <button id="add">Add</button>
+        <button id="search">Search</button>
+    </div>
+
+    <div id="daftar">
+        <div>John Resig</div>
+        <div>George Martin</div>
+        <div>Malcom John Sinclair</div>
+        <div>J. Ohn</div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2273032-aditya</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    body {
+        font-family: Arial;
+    }
+
+    .box {
+        width: 300px;
+        padding: 10px;
+        margin: 30px auto;
+        box-shadow: 0 0 10px gray;
+    }
+
+    input {
+        width: 250px;
+        margin-bottom: 10px;
+    }
+
+    .company {
+        margin-top: 3px;
+    }
+</style>
+
+<script>
+$(document).ready(function(){
+
+    $("#cari").keyup(function(){
+        var teks = $(this).val();
+
+        
+        $(".company").css("color", "black");
+
+        if(teks != ""){
+            $(".company:contains('" + teks + "')")
+            .css("color", "red");
+        }
+    });
+
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="box">
+    <input type="text" id="cari">
+
+    <div class="company">Sun Microsystem</div>
+    <div class="company">Apache Software Foundation</div>
+    <div class="company">Oracle Corporation</div>
+    <div class="company">International Business Machines</div>
+    <div class="company">Microsoft Corporation</div>
+    <div class="company">Apple Inc</div>
+    <div class="company">Sap Ag</div>
+    <div class="company">Accenture</div>
+    <div class="company">Computer Sciences Corporation</div>
+    <div class="company">Google</div>
+    <div class="company">Softbank</div>
+    <div class="company">Yahoo</div>
+</div>
+
+</body>
+</html>
