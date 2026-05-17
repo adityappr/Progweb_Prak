@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2273032-aditya</title>
+<script src="jquery.js"></script>
+
+<style>
+body {
+    font-family: "Times New Roman";
+    font-size: 16px;
+}
+
+.kotak {
+    width: 405px;
+    border: 1px solid black;
+    box-shadow: 3px 3px 5px gray;
+    padding: 6px;
+    margin-left: 40px;
+}
+
+h3 {
+    margin-top: 0;
+    font-size: 17px;
+}
+
+fieldset {
+    width: 220px;
+    border: 1px solid gray;
+    margin-bottom: 15px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+    $("#search").click(function(){
+        var kelas = $(":radio[name='kelas']:checked").val();
+        var fileJSON = "nilai.js";
+
+        if(kelas == "A"){
+            fileJSON = "nilaiA.js";
+        }
+        else if(kelas == "B"){
+            fileJSON = "nilaiB.js";
+        }
+
+        $.getJSON(fileJSON, function(data){
+            var isi = "";
+
+            $.each(data, function(i, mahasiswa){
+                isi += "<tr>";
+                isi += "<td>" + mahasiswa.nrp + "</td>";
+                isi += "<td>" + mahasiswa.nama + "</td>";
+                isi += "<td>" + mahasiswa.kelas + "</td>";
+                isi += "<td>" + mahasiswa.nilai + "</td>";
+                isi += "</tr>";
+            });
+
+            $("#data").html(isi);
+
+            $("#data tr:even").css("background-color", "#FFFFCC");
+            $("#data tr:odd").css("background-color", "#CCFFAA");
+        });
+    });
+});
+</script>
+</head>
+
+<body>
+<div class="kotak">
+    <h3>
+        Selamat! Berikut adalah Daftar Mahasiswa yang mendapat<br>
+        Nilai A Pemrograman Web SI Tahun Ajaran 2023/2024
+    </h3>
+
+    <fieldset>
+        <input type="radio" name="kelas" value="All" checked>All<br>
+        <input type="radio" name="kelas" value="A">Kelas A<br>
+        <input type="radio" name="kelas" value="B">Kelas B<br>
+        <input type="button" id="search" value="Search">
+    </fieldset>
+
+    <table>
+        <thead>
+            <tr>
+                <th>NRP</th>
+                <th>NAMA</th>
+                <th>KELAS</th>
+                <th>NILAI AKHIR</th>
+            </tr>
+        </thead>
+        <tbody id="data"></tbody>
+    </table>
+</div>
+</body>
+</html>
