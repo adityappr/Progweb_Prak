@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2273032-aditya</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    .kotak {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        float: left;
+        border: 2px solid blue;
+    }
+
+    button {
+        margin: 10px;
+    }
+
+    .clear {
+        clear: both;
+    }
+</style>
+
+<script>
+$(document).ready(function(){
+
+    
+    $(".kotak").click(function(){
+        $(".kotak").removeAttr("id"); // reset
+        $(this).css("background-color", "red");
+        $(this).attr("id", "merah"); 
+    });
+
+
+    $("button").click(function(){
+
+        $(".kotak").each(function(){
+
+            
+            if($(this).attr("id") == "merah"){
+                return false;
+            }
+
+            
+            $(this).css("background-color", "yellow");
+
+        });
+
+    });
+
+});
+</script>
+
+</head>
+
+<body>
+
+<button>Change colors</button><br>
+
+<div class="kotak"></div>
+<div class="kotak"></div>
+<div class="kotak"></div>
+<div class="kotak"></div>
+<div class="kotak"></div>
+<div class="kotak"></div>
+<div class="kotak"></div>
+<div class="kotak"></div>
+
+<div class="clear"></div>
+
+</body>
+</html>

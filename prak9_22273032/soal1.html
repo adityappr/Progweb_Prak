@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2273032-aditya</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    .menu {
+        width: 500px;
+        margin: 30px auto;
+        padding: 10px;
+        box-shadow: 0 0 10px gray;
+        font-family: Arial;
+    }
+
+    ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li.item {
+        float: left;
+        width: 150px;
+        margin-right: 10px;
+        background: #ff1493;
+        position: relative;
+        color: white;
+        font-weight: bold;
+        padding-left: 5px;
+    }
+
+    li.item ol {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 150px;
+        background: white;
+        border: 2px solid #ff1493;
+        color: black;
+        font-weight: normal;
+    }
+
+    .clear {
+        clear: both;
+    }
+</style>
+
+<script>
+$(document).ready(function(){
+
+    
+    $("li.item ol").hide();
+
+    
+    $("li.item").on("mouseover", function(){
+        $("li.item ol").hide();
+        $(this).children("ol").show();
+    });
+
+    
+    $("li.item").on("mouseout", function(){
+        $(this).children("ol").hide();
+    });
+
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="menu">
+    <ol>
+        <li class="item">jQuery
+            <ol>
+                <li>Download</li>
+                <li>Documentation</li>
+                <li>Blog</li>
+            </ol>
+        </li>
+
+        <li class="item">Community
+            <ol>
+                <li>Mailing List</li>
+                <li>Tutorials</li>
+                <li>Demos</li>
+                <li>Plugins</li>
+            </ol>
+        </li>
+
+        <li class="item">Development
+            <ol>
+                <li>Source Code</li>
+                <li>Bug Tracking</li>
+                <li>Recent Changes</li>
+            </ol>
+        </li>
+    </ol>
+
+    <div class="clear"></div>
+</div>
+
+</body>
+</html>

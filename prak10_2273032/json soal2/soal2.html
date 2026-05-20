@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2273032-aditya</title>
+<script src="jquery.js"></script>
+
+<style>
+body{
+    font-family:"Times New Roman";
+    font-size:14px;
+}
+
+.judulSoal{
+    width:650px;
+    background:#bdbdbd;
+    font-weight:bold;
+    margin-left:20px;
+    padding-left:5px;
+}
+
+.text{
+    margin-left:20px;
+}
+
+.kotakInput{
+    width:300px;
+    border:1px solid black;
+    box-shadow:3px 3px 5px gray;
+    padding:5px;
+    margin-left:65px;
+    margin-top:10px;
+}
+
+.kotakInput input[type=text]{
+    width:290px;
+    height:15px;
+    font-size:11px;
+    margin-bottom:2px;
+}
+
+input[type=button]{
+    font-size:11px;
+    margin-top:8px;
+}
+
+#hasil{
+    width:455px;
+    border:1px solid gray;
+    margin-left:55px;
+    margin-top:20px;
+    display:none;
+}
+
+#hasil h2{
+    text-align:center;
+    color:blue;
+    text-decoration:underline;
+    font-size:18px;
+}
+
+.isi{
+    border-top:1px solid gray;
+    padding:3px;
+}
+
+.linkJudul{
+    color:blue;
+    text-decoration:underline;
+    font-weight:bold;
+}
+
+.footer{
+    border-top:1px solid gray;
+    padding:3px;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+
+    $("#look").click(function(){
+
+        $.getJSON("SIJson.txt", function(data){
+
+            $("#title").val(data.title);
+            $("#content").val("Content");
+            $("#generator").val(data.generator);
+
+            var isi = "";
+
+            isi += "<h2>" + data.title + "</h2>";
+
+            $.each(data.content, function(i, mk){
+
+                isi += "<div class='isi'>";
+
+                isi += "<a href='" + mk.link + "' class='linkJudul'>";
+                isi += mk.kode + " - " + mk.nama;
+                isi += "</a><br>";
+
+                isi += "By : " + mk.dosen + " / <i>" + mk.tanggal + "</i><br><br>";
+
+                isi += mk.deskripsi + "<br><br>";
+
+                isi += "Universitas : ";
+                isi += "<a href='" + mk.universitasLink + "'>Click Here</a><br>";
+
+                isi += "Tag(s) : " + mk.tags;
+
+                isi += "</div>";
+            });
+
+            isi += "<div class='footer'>" + data.footer + "</div>";
+
+            $("#hasil").html(isi);
+            $("#hasil").show();
+
+        });
+
+    });
+
+});
+</script>
+</head>
+
+<body>
+
+
+
+<br>
+
+<div class="kotakInput">
+
+    <input type="text" id="title" value="Title"><br>
+
+    <input type="text" id="content" value="Content"><br>
+
+    <input type="text" id="generator" value="Generator"><br>
+
+    <input type="button" id="look" value="Look">
+
+</div>
+
+
+<div id="hasil"></div>
+
+</body>
+</html>

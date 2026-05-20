@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>2273032-aditya</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .wrap { margin: 20px; }
+    table {
+      border-collapse: collapse;
+      font-size: 26px;
+      text-align: center;
+      background: #f9f9f9;
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    }
+    td {
+      border: 1px solid #666;
+      width: 38px;
+      height: 46px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h3>Tabel Perkalian</h3>
+    <div id="hasil"></div>
+  </div>
+
+  <script>
+    var input;
+    while (true) {
+      input = prompt("A number?");
+      if (input !== null && input.trim() !== "" && !isNaN(parseInt(input))) {
+        break;
+      }
+      alert("Input harus angka. Silakan isi ulang.");
+    }
+
+    var n = parseInt(input);
+    var html = "<table>";
+    for (var i = 1; i <= n; i++) {
+      html += "<tr>";
+      html += "<td>" + i + "</td>";
+      html += "<td>x</td>";
+      html += "<td>" + n + "</td>";
+      html += "<td>=</td>";
+      html += "<td>" + (i * n) + "</td>";
+      html += "</tr>";
+    }
+    html += "</table>";
+
+    document.getElementById("hasil").innerHTML = html;
+  </script>
+</body>
+</html>s
